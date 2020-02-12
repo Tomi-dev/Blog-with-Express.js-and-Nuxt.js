@@ -1,0 +1,36 @@
+header nav ul {
+    height: 60px;
+    width: 50vw;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+header nav ul li{
+    list-style: none;
+    padding: 5px 10px;
+}
+
+header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a:after{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: all .4s;
+}
+
+header nav ul li:hover a:after{
+    width: 100%;
+}

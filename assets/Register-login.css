@@ -1,0 +1,102 @@
+main {
+    height: calc(100vh - 60px);
+}
+
+.form-container{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container form input {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    outline: 0;
+    transition: all .4s;
+}
+
+.form-container form input::placeholder{
+    color: #fff;
+}
+
+.form-container form input:focus {
+    outline: 0;
+    background-color: #fff;
+    color: initial;
+}
+
+.form-container form input:focus::placeholder{
+    color: initial;
+}
+
+.form-container form label.file-input{
+    padding: 10px 5px;
+    text-align: center;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.form-container form label.file-input:hover{
+    animation: swing .7s ease infinite;
+    animation-iteration-count: 1;
+}
+
+.form-container form input[type="file"]{
+    display: none;
+}
+
+.form-container form div.submit-btn-group{
+    height: 40px;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-container form input.submit-btn{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-container form div .animation-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #fff;
+    transition: all .4s;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.form-container form div.submit-btn-group:hover .animation-bg {
+    width: 100%;
+}
+
+.form-container form div.submit-btn-group:hover input.submit-btn{
+    color: initial;
+}
