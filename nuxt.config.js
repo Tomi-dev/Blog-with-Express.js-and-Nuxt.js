@@ -48,5 +48,9 @@ module.exports = {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  serverMiddleware: [
+    // Will register file from project api directory to handle /api/* requires
+    { path: '/api/user', handler: '~/server/modules/user.js' },
+  ]
 }

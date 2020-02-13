@@ -1,25 +1,60 @@
 <template>
     <main>
         <section class="form-container" enctype="multipart/form-data">
-            <form @submit.prevent="console.log('');" class="register-form">
-                <input type="text" placeholder="Username or E-mail">
-                <input type="password" placeholder="Password">
-                <label for="profileImg" class="file-input">
-                    Upload profile image
-                    <input type="file" id="profileImg">
-                </label>
-                <div class="submit-btn-group">
-                    <input type="submit" value="Sign up" class="submit-btn">
-                    <span class="animation-bg"></span>
+            <div class="form-holder">
+                <h1>Sign up</h1>
+                <form @submit.prevent="register" class="register-form">
+                    <input type="text" placeholder="Username or E-mail" v-model="username">
+                    <input type="password" placeholder="Password" v-model="password">
+                    <label for="profileImg" class="file-input">
+                        {{placeholderfileName}}
+                        <input type="file" id="profileImg" @change="changeName">
+                    </label>
+                    <div class="submit-btn-group">
+                        <input type="submit" value="Sign up" class="submit-btn">
+                        <span class="animation-bg"></span>
+                    </div>
+                </form>
+                <div class="form-info">
+                    <p>Already have an account? <nuxt-link to="/login">Sign in</nuxt-link></p>
                 </div>
-            </form>
+            </div>
         </section>        
     </main>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-    name: 'register'
+    name: 'register',
+    data(){
+        return{
+            placeholderfileName: 'Upload profile image',
+            file: '',
+            username: '',
+            password: ''
+        }
+    },
+    methods: {
+        ...mapActions({
+            registerUser: 'user/registerUser'
+        }),
+
+        changeName(file){
+            this.placeholderfileName = file.target.files[0].name;
+        },
+
+        register(data){
+            this.file = data.target.elements.profileImg.files[0];
+            const formData = new FormData();
+            formData.append('username', this.username);
+            formData.append('password', this.password);
+            formData.append('file', this.file);
+
+            this.registerUser(formData);
+        }
+    }
 }
 </script>
 

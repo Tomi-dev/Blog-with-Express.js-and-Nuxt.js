@@ -10,6 +10,20 @@ main {
     align-items: center;
 }
 
+.form-container .form-holder{
+    border: 2px solid #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-container .form-holder h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 4em;
+}
+
 .form-container form {
     width: 300px;
     display: flex;
@@ -35,11 +49,11 @@ main {
 .form-container form input:focus {
     outline: 0;
     background-color: #fff;
-    color: initial;
+    color: rgba(0,0,0, .7);
 }
 
 .form-container form input:focus::placeholder{
-    color: initial;
+    color: rgba(0,0,0, .7);
 }
 
 .form-container form label.file-input{
@@ -98,5 +112,16 @@ main {
 }
 
 .form-container form div.submit-btn-group:hover input.submit-btn{
-    color: initial;
+    color: rgba(0,0,0, .7);
+}
+
+.form-container .form-holder .form-info {
+    padding-top: 10px;
+    margin-top: 30px;
+    border-top: 2px solid #fff;
+    color: #fff;
+}
+
+.form-container .form-holder .form-info a {
+    color: #fff;
 }
