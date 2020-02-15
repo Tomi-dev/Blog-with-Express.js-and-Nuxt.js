@@ -30,7 +30,13 @@ main {
     flex-direction: column;
 }
 
+.form-container form .input-info{
+    position: relative;
+    width: 100%;
+}
+
 .form-container form input {
+    width: 100%;
     background-color: transparent;
     color: #fff;
     border: 2px solid #fff;

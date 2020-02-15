@@ -4,11 +4,15 @@
             <div class="form-holder">
                 <h1>Sign up</h1>
                 <form @submit.prevent="register" class="register-form">
-                    <input type="text" placeholder="Username or E-mail" v-model="username">
-                    <input type="password" placeholder="Password" v-model="password">
+                    <div class="input-info">
+                        <input type="text" placeholder="Username or E-mail" v-model="username">
+                    </div>
+                    <div class="input-info">
+                        <input type="password" placeholder="Password" v-model="password">
+                    </div>
                     <label for="profileImg" class="file-input">
                         {{placeholderfileName}}
-                        <input type="file" id="profileImg" @change="changeName">
+                        <input type="file" id="profileImg" name="profileImg" @change="changeName">
                     </label>
                     <div class="submit-btn-group">
                         <input type="submit" value="Sign up" class="submit-btn">
@@ -33,7 +37,7 @@ export default {
             placeholderfileName: 'Upload profile image',
             file: '',
             username: '',
-            password: ''
+            password: '',
         }
     },
     methods: {

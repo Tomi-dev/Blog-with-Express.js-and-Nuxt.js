@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-const state = {
-    user: {}
+const state = () => {
+    return {
+        user: {}
+    }
 };
 
 const getters = {
@@ -10,7 +12,6 @@ const getters = {
 
 const actions = {
     registerUser({commit}, userFormData) {
-        console.log(userFormData);
         const response = axios.post('http://localhost:3000/api/user/register', userFormData, {withCredentials: true});
         console.log(response);
     }
