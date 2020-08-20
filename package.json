@@ -11,7 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "express-formidable": "^1.2.0",
